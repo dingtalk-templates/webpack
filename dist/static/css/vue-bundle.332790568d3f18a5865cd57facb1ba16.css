@@ -1,0 +1,39 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.wrapper {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  -ms-flex-pack: center;
+      justify-content: center;
+  background-color: #333377;
+}
+.title {
+  font-size: 60px;
+  color: #505050;
+  text-align: center;
+}
+.subtitle {
+  display: block;
+  font-size: 30px;
+  color: #AAAAAA;
+  xxxx: static;
+  text-align: center;
+  margin-top: 20px;
+}
+
+/*# sourceMappingURL=vue-bundle.332790568d3f18a5865cd57facb1ba16.css.map*/
