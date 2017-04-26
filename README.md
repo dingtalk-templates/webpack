@@ -70,7 +70,7 @@ new Vue(Home);
 	export default {
 		name: 'your name'
 		data: {}
-	}
+		}
 </script>
 <style>
 
