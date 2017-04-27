@@ -9,10 +9,8 @@
 3. mock 模拟数据
 4. pages 真正的页面放在这里
 5. platforms 平台相关的入口放在这里
-6. router web平台的路由，使用了vue-router
-7. store 如果你的应用很复杂，你才能启用这个目录，学习一下vuex用状态管理工具来管理你的数据结构
 
-在这个项目中，主要用webpack来解决构建打包的问题，babel来转译ES5，flow来增强JS的约束。你可以访问build目录来查看构建脚本，flow的配置主要在.flowconfig和flow目录中的declare，你不一定需要flow，只要删除 `/*@flow*/`，编译器就不会去检查你的JS类型了。
+在这个项目中，主要用webpack来解决构建打包的问题，babel来转译ES5，你可以访问build目录来查看构建脚本。
 
 你可以在 [weex-generator-package](https://github.com/icepy/weex-generator-package) 访问并下载使用它。
 
@@ -37,11 +35,12 @@ npm run dev:weex
 # 启动 weex release 环境
 npm run build:weex
 
+# 编译weex和Web环境下所需要的资源，这是可以正式部署的静态资源
+npm run build
 ```
 
 ### 构建脚本学习资源
 
-* [flow](https://flow.org/)
 * [babel](https://babeljs.io/)
 * [webpack](https://webpack.js.org/guides/)
 
@@ -62,17 +61,15 @@ new Vue(Home);
 
 ```Vue
 <template>
-    <div>
-        <text>Hello Your Name</text>
-    </div>
+	<div>
+		<text>Hello Your Name</text>
+	</div>
 </template>
 <script>
-export default {
-    name: 'your name'
-    data: {
-      
-    }
-}
+	export default {
+		name: 'your name'
+		data: {}
+	}
 </script>
 <style>
 
@@ -84,11 +81,9 @@ export default {
 ```JavaScript
 // webpack 配置
 
-entry:{
-'weex-icepy-bundle': './src/platforms/weex/icepy-entry.js'
+entry: {
+	'weex-icepy-bundle': './src/platforms/weex/icepy-entry.js'
 }
 ```
 
 最后，在你的终端里输入 `npm run dev:weex`，感受一下吧。
-
-
