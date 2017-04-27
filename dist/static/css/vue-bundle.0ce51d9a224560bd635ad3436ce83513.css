@@ -1,18 +1,4 @@
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .wrapper {
   display: -ms-flexbox;
   display: flex;
@@ -21,6 +7,8 @@
   -ms-flex-pack: center;
       justify-content: center;
   background-color: #333377;
+  width: 750px;
+  height: 1100px;
 }
 .title {
   font-size: 60px;
@@ -31,9 +19,8 @@
   display: block;
   font-size: 30px;
   color: #AAAAAA;
-  xxxx: static;
   text-align: center;
   margin-top: 20px;
 }
 
-/*# sourceMappingURL=vue-bundle.332790568d3f18a5865cd57facb1ba16.css.map*/
+/*# sourceMappingURL=vue-bundle.0ce51d9a224560bd635ad3436ce83513.css.map*/
