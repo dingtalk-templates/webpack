@@ -62,15 +62,17 @@ new Vue(Home);
 
 ```Vue
 <template>
-	<div>
-		<text>Hello Your Name</text>
-	</div>
+    <div>
+        <text>Hello Your Name</text>
+    </div>
 </template>
 <script>
-	export default {
-		name: 'your name'
-		data: {}
-		}
+export default {
+    name: 'your name'
+    data: {
+      
+    }
+}
 </script>
 <style>
 
@@ -82,9 +84,11 @@ new Vue(Home);
 ```JavaScript
 // webpack 配置
 
-entry: {
-	'weex-icepy-bundle': './src/platforms/weex/icepy-entry.js'
+entry:{
+'weex-icepy-bundle': './src/platforms/weex/icepy-entry.js'
 }
 ```
 
 最后，在你的终端里输入 `npm run dev:weex`，感受一下吧。
+
+
