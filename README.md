@@ -26,10 +26,7 @@ npm run dev:web
 # build vue web release 环境
 npm run build:web
 
-# 启动 一个临时服务器，用于访问 weex bundle 资源
-python -m SimpleHTTPServer 8089
-
-# 启动 weex dev 环境
+# 启动 weex dev 环境，自启服务器 at localhost:8089
 npm run dev:weex
 
 # 启动 weex release 环境
