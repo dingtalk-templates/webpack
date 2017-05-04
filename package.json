@@ -18,7 +18,7 @@
   "dependencies": {
     "lodash": "^4.17.4",
     "vue": "^2.1.10",
-    "weex-dingtalk": "^0.0.7",
+    "weex-dingtalk": "^0.0.8",
     "weex-html5": "^0.4.1",
     "weex-vue-render": "^0.2.0"
   },
