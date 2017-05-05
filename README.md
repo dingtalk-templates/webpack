@@ -2,17 +2,15 @@
 
 ### 项目介绍
 
-最重要的是，你需要明白src目录下的含义：
+在这个项目中，主要用webpack来解决构建打包的问题，babel来转译ES5，你可以访问build目录来查看构建脚本。
+
+你可以在 [weex-generator-package](https://github.com/icepy/weex-generator-package) 访问并下载使用它。
 
 1. components 可以共享的组件放在这里
 2. lib 可以共享的函数.js文件放在这里
 3. mock 模拟数据
 4. pages 真正的页面放在这里
 5. platforms 平台相关的入口放在这里
-
-在这个项目中，主要用webpack来解决构建打包的问题，babel来转译ES5，你可以访问build目录来查看构建脚本。
-
-你可以在 [weex-generator-package](https://github.com/icepy/weex-generator-package) 访问并下载使用它。
 
 ### Build Setup
 
