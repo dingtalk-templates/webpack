@@ -9,6 +9,7 @@
     import dingtalk from 'weex-dingtalk';
     const modal = weex.requireModule('modal');
     const globalEvent = weex.requireModule('globalEvent');
+    console.log('start generator-package');
     export default {
         name: 'home',
         data: function(){
@@ -25,6 +26,18 @@
                     title: 'icepy'
                 });
             });
+
+            //resume
+            dingtalk.on('resume',function(){
+              console.log('resume weex generator-package')
+            });
+
+            //pause
+            dingtalk.on('pause',function(){
+              console.log('pause weex generator-package');
+            });
+
+            
         },
         methods: {
             getClick: function(){
