@@ -2,15 +2,22 @@
 
 ### 项目介绍
 
-在这个项目中，主要用webpack来解决构建打包的问题，babel来转译ES5，你可以访问build目录来查看构建脚本。
+这个项目为钉钉开发者准备了从构建，调试，到打包一系列的流程以及编写weex应用的最佳实践，我们使用`Webpack`来打包源代码，`Babel`帮助我们处理ES6的转译。
+
+> 注意 ⚠️ 此刻，我们移除掉了很多不是必须的项目，比如flow静态类型检查，jasmine单元测试等。
+
+关于转场，你可以选择使用`vue-router`的方式，也可以使用钉钉的js-api `openLink`来跳转页面。如果你使用钉钉的js-api，那么你的应用更像一个传统的Native App转场，比如iOS的NavigationController的push，pop等有animation效果转场。
 
 你可以在 [weex-generator-package](https://github.com/icepy/weex-generator-package) 访问并下载使用它。
 
+### 目录结构
+
 1. components 可以共享的组件放在这里
-2. lib 可以共享的函数.js文件放在这里
-3. mock 模拟数据
-4. pages 真正的页面放在这里
-5. platforms 平台相关的入口放在这里
+2. container 如果你使用了vue-router，那么需要使用这里的共用容器
+3. lib 可以共享的函数.js文件放在这里
+4. mock 模拟数据
+5. pages 真正的页面放在这里
+6. platforms 平台相关的入口放在这里
 
 ### Build Setup
 
@@ -39,9 +46,9 @@ npm run build
 * [babel](https://babeljs.io/)
 * [webpack](https://webpack.js.org/guides/)
 
-### 如何创建一个新页面
+### 如何创建一个传统bundle.js式页面
 
-在初始状态下的generator-package项目中已经存在了一个Hello Dingtalk 的页面，你可以修改它，或者创建一个新的页面。
+我们可以先看一个很传统的方式来创建一个新页面，一个页面就是一个`bundle.js`，你应该在`Webpack`配置中去处理这些`bundle.js`。
 
 当你选择创建一个新的页面时，需要经过下列几个步骤：
 
@@ -57,17 +64,19 @@ new Vue(Home);
 ```Vue
 <template>
   <div>
-    <text>Hello Your Name</text>
+    <text class="hello">Hello Your Name</text>
   </div>
 </template>
 <script>
-export default {
-  name: 'your name'
-  data: {}
-}
+  export default {
+    name: 'your name'
+    data: {}
+  }
 </script>
 <style>
+  .hello{
 
+  }
 </style>
 ```
 
@@ -82,3 +91,81 @@ entry:{
 ```
 
 最后，在你的终端里输入 `npm run dev:weex`，感受一下吧。
+
+### 如何创建一个带vue-router的页面
+
+有时候类似一个UIViewController式的`bundle.js`并不是你想要的，很多事情不是很好处理，那么你可以选择vue-router来处理转场，为什么它可以运行weex环境帮你处理转场？因为vue-router本意上是可以运行在任意的JavaScript环境中，你可以设置mode为`abstract`，而且weex是需要上层框架的render来进行计算渲染Native页面的，这也意味着当我们的路由进行转换时，vue-router会去处理一个Vue Component，而这个Vue Component 正是你需要渲染的页面。
+
+在`pages`目录下创建一个组件（页面），比如`dingtalk/index.vue`：
+
+```Vue
+<template>
+  <div class="wrapper">
+    <div class="bind-vue-container" @click="bindForvue">
+      <text class="bind-vue">确定</text>
+    </div>
+  </div>
+</template>
+<script>
+  import dingtalk from 'weex-dingtalk';
+
+  export default {
+    name: 'bind-vue',
+    data: function(){
+      return {};
+    },
+    mounted: function(){
+      //resume
+      dingtalk.on('resume',function(){
+        console.log('resume weex generator-package')
+      });
+
+      //pause
+      dingtalk.on('pause',function(){
+        console.log('pause weex generator-package');
+      });
+    },
+    methods: {
+      bindForvue: function(){
+        this.$router.back();
+      }
+    }
+  }
+</script>
+<style>
+
+</style>
+
+```
+
+访问`router.js`，参考 [https://router.vuejs.org/zh-cn/essentials/getting-started.html](https://router.vuejs.org/zh-cn/essentials/getting-started.html) 来配置路由。
+
+```JavaScript
+import VueRouter from 'vue-router';
+import Home from '../pages/home/index.vue';
+import Dingtalk from '../pages/dingtalk/index.vue';
+
+const routes = [
+  {
+    path:'/',
+    name: 'home',
+    component: Home
+  },
+  {
+    path: '/dingtalk',
+    name: 'dingtalk',
+    component: Dingtalk
+  }
+];
+
+export default function Router(Vue){
+  Vue.use(VueRouter);
+  const router = new VueRouter({
+    routes: routes
+  });
+  return {
+    router
+  }
+}
+
+```
