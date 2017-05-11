@@ -1,3 +1,11 @@
-import Home from '../../pages/home/index.vue';
-Home.el = '#app';
-new Vue(Home);
+import App from '../../container/App.vue';
+import Router from '../../container/router.js';
+
+const { router } = Router(Vue);
+
+new Vue(Vue.util.extend({
+  el:'#root',
+  router
+},App));
+
+router.push('/')

@@ -1,4 +1,8 @@
 
+.app-container{
+  background-color: #f8f8f8;
+}
+
 .wrapper {
   display: -ms-flexbox;
   display: flex;
@@ -6,7 +10,6 @@
       flex-direction: column;
   -ms-flex-pack: center;
       justify-content: center;
-  background-color: #333377;
   width: 750px;
   height: 1100px;
 }
@@ -21,6 +24,60 @@
   color: #AAAAAA;
   text-align: center;
   margin-top: 20px;
+}
+
+.wrapper {
+  -ms-flex-direction: column;
+      flex-direction: column;
+  -ms-flex-pack: center;
+      justify-content: center;
+  -ms-flex-align: center;
+      align-items: center;
+  background-color: #f8f8f8;
+}
+.bind-vue-prompt{
+  width: 514px;
+  -ms-flex-pack: center;
+      justify-content: center;
+  -ms-flex-align: center;
+      align-items: center;
+  margin-bottom: 112px;
+}
+.bind-vue-image{
+  width: 514px;
+  height: 243px;
+  margin-bottom: 73px;
+}
+.image{
+  width: 514px;
+  height: 243px;
+}
+.bind-vue-text{
+  width: 388px;
+  height: 108px;
+}
+.text-control{
+  text-align: center;
+  font-size: 34px;
+  color: #000;
+}
+.bind-vue-container {
+  width: 702px;
+  height: 88px;
+  position: fixed;
+  bottom: 24px;
+  left: 24px;
+  -ms-flex-pack: center;
+      justify-content: center;
+  -ms-flex-align: center;
+      align-items: center;
+  border-radius: 6px;
+  background-color: #4fc08d;
+}
+.bind-vue{
+  font-size: 34px;
+  color: #ffffff;
+  text-align: center;
 }
 
 /*# sourceMappingURL=vue-bundle.css.map*/
