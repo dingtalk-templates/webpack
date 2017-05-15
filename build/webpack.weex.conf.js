@@ -21,7 +21,7 @@ var filename = '[name]-dev.js';
 if (env === 'production'){
   plugins = [
     new webpack.DefinePlugin({
-      'process.env': env
+      'process.env': JSON.stringify(env)
     }),
     new webpack.optimize.UglifyJsPlugin({
       compress: {
