@@ -6,14 +6,13 @@
   "private": true,
   "scripts": {
     "dev:web": "node build/dev-server.js",
-    "build:web": "npm run flow && npm run release:web",
+    "build:web": "npm run release:web",
     "release:web": "node build/build.js",
-    "flow": "flow check",
-    "test": "",
     "dev:weex": "node build/dev-weex-server.js",
-    "build:weex": "npm run flow && npm run release:weex",
+    "build:weex": "npm run release:weex",
     "release:weex": "NODE_ENV=production node build/build-weex.js",
-    "build": "npm run release:weex && npm run release:web"
+    "build": "npm run release:weex && npm run release:web",
+    "dev:watch": "NODE_ENV=watch node build/build-weex.js"
   },
   "dependencies": {
     "lodash": "^4.17.4",

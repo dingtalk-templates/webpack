@@ -15,9 +15,9 @@ var env = process.env.NODE_ENV;
 function resolve (dir) {
   return path.join(__dirname, '..', dir)
 }
-var watch = true;
+var watch = false;
 var plugins = [];
-var filename = '[name]-dev.js';
+var filename = '[name].js';
 if (env === 'production'){
   plugins = [
     new webpack.DefinePlugin({
@@ -29,11 +29,16 @@ if (env === 'production'){
       }
     })
   ];
-  filename = '[name].js';
 } else {
-  plugins = [
-    new FriendlyErrorsPlugin()
-  ];
+  if (env === 'watch'){
+    watch = true;
+    filename = '[name]-watch.js';
+  } else {
+    filename = '[name]-dev.js';
+    plugins = [
+      new FriendlyErrorsPlugin()
+    ];
+  }
 }
 
 plugins.push(
@@ -68,7 +73,8 @@ var config = {
   plugins: plugins,
   resolve: {
     alias: {}
-  }
+  },
+  watch: watch
 };
 
 if (env !== 'production'){
