@@ -1,6 +1,6 @@
 > A Weex and Vue.js project，你可以参考它来完善你的Weex应用架构或者直接使用它。
 
-### 项目介绍
+# 项目介绍
 
 这个项目为钉钉开发者准备了从构建，调试，到打包一系列的流程以及编写weex应用的最佳实践，我们使用`Webpack`来打包源代码，`Babel`帮助我们处理ES6的转译。
 
@@ -10,20 +10,22 @@
 
 你可以在 [weex-generator-package](https://github.com/icepy/weex-generator-package) 访问并下载使用它。
 
-### 目录结构
+# 目录结构
 
 1. components 可以共享的组件放在这里
 2. container 如果你使用了vue-router，那么需要使用这里的共用容器
 3. lib 可以共享的函数.js文件放在这里
-4. mock 模拟数据
-5. pages 真正的页面放在这里
-6. platforms 平台相关的入口放在这里
+4. pages 真正的页面放在这里
+5. platforms 平台相关的入口放在这里
 
-### Build Setup
+# Build Setup
 
 ```bash
 # install dependencies
 npm install
+
+# 启动 mock 服务器
+npm run mock
 
 # 启动 vue web dev 环境，自启服务器 at localhost:8080
 npm run dev:web
@@ -39,6 +41,28 @@ npm run build:weex
 
 # 编译weex和Web环境下所需要的资源，这是可以正式部署的静态资源
 npm run build
+```
+
+# Mock
+
+本项目用koa写了一个简单的mock server，它非常的灵活可复制，你可以找到 `mock` 目录，在`router.js`中书写你想要mock的数据，比如GET：
+
+```JavaScript
+router.get('/weex/get', function *(next) {
+    this.body = {
+        success: 1
+    };
+});
+```
+
+如果你想写一个POST请求也很容易：
+
+```JavaScript
+router.post('/weex/post', function *(next) {
+    this.body = {
+        success: true
+    };
+});
 ```
 
 ### 构建脚本学习资源
