@@ -48,13 +48,12 @@
     }
   }
 </script>
-<style>
+<style scoped>
   .wrapper {
     display: flex;
     flex-direction: column;
     justify-content: center;
     width: 750px;
-    height: 1100px;
   }
   .title {
     font-size: 60px;

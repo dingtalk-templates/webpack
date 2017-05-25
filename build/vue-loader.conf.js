@@ -3,15 +3,16 @@ var config = require('../config')
 var isProduction = process.env.NODE_ENV === 'production'
 
 module.exports = {
-  loaders: utils.cssLoaders({
-    sourceMap: isProduction
-      ? config.build.productionSourceMap
-      : config.dev.cssSourceMap,
-    extract: isProduction
-  }),
-  postcss: [
-    require('autoprefixer')({
-      browsers: ['last 2 versions']
-    })
+  /**
+   * important! should use postTransformNode to add $processStyle for
+   * inline style normalization.
+   */
+  compilerModules: [
+    {
+      postTransformNode: el => {
+        el.staticStyle = `$processStyle(${el.staticStyle})`
+        el.styleBinding = `$processStyle(${el.styleBinding})`
+      }
+    }
   ]
 }

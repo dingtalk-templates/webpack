@@ -22,10 +22,9 @@
     "weex-dingtalk": "^0.1.4",
     "weex-dingtalk-journey": "^0.1.0",
     "weex-html5": "^0.4.1",
-    "weex-vue-render": "^0.2.0"
+    "weex-vue-render": "^0.11.42"
   },
   "devDependencies": {
-    "autoprefixer": "^6.7.2",
     "babel-core": "^6.22.1",
     "babel-loader": "^6.2.10",
     "babel-plugin-transform-flow-strip-types": "^6.22.0",
@@ -50,7 +49,7 @@
     "semver": "^5.3.0",
     "shelljs": "^0.7.6",
     "url-loader": "^0.5.7",
-    "vue-loader": "^10.3.0",
+    "vue-loader": "^11.3.3",
     "vue-style-loader": "^2.0.0",
     "vue-template-compiler": "^2.1.10",
     "webpack": "^2.2.1",
@@ -58,7 +57,7 @@
     "webpack-dev-middleware": "^1.10.0",
     "webpack-hot-middleware": "^2.16.1",
     "webpack-merge": "^2.6.1",
-    "weex-loader": "^0.4.1",
+    "weex-loader": "^0.4.4",
     "koa": "~1.1.2",
     "koa-router": "~5.3.0",
     "koa-static": "~1.5.2",
