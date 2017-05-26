@@ -35,10 +35,13 @@ module.exports = {
     // just be aware of this issue when enabling this option.
     cssSourceMap: false
   },
-  weex: {
+  weexDev: {
     env: require('./dev.env'),
     port: 8089,
     assetsSubDirectory: 'dist',
     assetsPublicPath: '/'
+  },
+  weexBuild: {
+    env: require('./prod.env')
   }
 }

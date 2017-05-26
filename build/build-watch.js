@@ -4,7 +4,7 @@
 
 var webpack = require('webpack');
 var chalk = require('chalk');
-var webpackConfig = require('./webpack.weex.prod.conf');
+var webpackConfig = require('./webpack.weex.watch.conf');
 
 webpack(webpackConfig,function (err, stats) {
     if (err) {

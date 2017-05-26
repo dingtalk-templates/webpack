@@ -10,9 +10,9 @@
     "release:web": "node build/build.js",
     "dev:weex": "node build/dev-weex-server.js",
     "build:weex": "npm run release:weex",
-    "release:weex": "NODE_ENV=production node build/build-weex.js",
+    "release:weex": "node build/build-weex.js",
     "build": "npm run release:weex && npm run release:web",
-    "dev:watch": "NODE_ENV=watch node build/build-weex.js",
+    "dev:watch": "node build/build-watch.js",
     "mock": "nodemon build/mock-server.js"
   },
   "dependencies": {
