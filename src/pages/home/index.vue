@@ -1,7 +1,6 @@
 <template>
   <div class="wrapper">
-    <text class="title">Hello icepy</text>
-    <text class="subtitle" v-on:click="getClick">{{ link }}</text>
+    <text class="title" v-on:click="getClick">Hello Dingtalk Micro App {{ link }}</text>
   </div>
 </template>
 <script>
@@ -12,7 +11,7 @@
     name: 'home',
     data: function(){
       return {
-        link: 'DingTalk'
+        link: ', author: icepy'
       }
     },
     mounted: function(){

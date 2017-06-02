@@ -1,14 +1,5 @@
 <template>
   <div class="wrapper">
-    <div class="bind-vue-prompt">
-      <div class="bind-vue-image">
-        <image class="image" :src="vueImage"/>
-      </div>
-      <div class="bind-vue-text">
-        <text class="text-control">钉钉Weex小程序</text>
-        <text class="text-control">快来使用Vue.js开发你的小程序吧</text>
-      </div>
-    </div>
     <div class="bind-vue-container" @click="bindForvue">
       <text class="bind-vue">确定</text>
     </div>
@@ -40,30 +31,6 @@
     justify-content: center;
     align-items: center;
     background-color: #f8f8f8;
-  }
-  .bind-vue-prompt{
-    width: 514px;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 112px;
-  }
-  .bind-vue-image{
-    width: 514px;
-    height: 243px;
-    margin-bottom: 73px;
-  }
-  .image{
-    width: 514px;
-    height: 243px;
-  }
-  .bind-vue-text{
-    width: 388px;
-    height: 108px;
-  }
-  .text-control{
-    text-align: center;
-    font-size: 34px;
-    color: #000;
   }
   .bind-vue-container {
     width: 702px;
