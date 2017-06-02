@@ -25,15 +25,7 @@
       }
     },
     mounted: function(){
-      //resume
-      dingtalk.on('resume',function(){
-        console.log('resume weex generator-package')
-      });
 
-      //pause
-      dingtalk.on('pause',function(){
-        console.log('pause weex generator-package');
-      });
     },
     methods: {
       bindForvue: function(){
@@ -76,9 +68,6 @@
   .bind-vue-container {
     width: 702px;
     height: 88px;
-    position: fixed;
-    bottom: 24px;
-    left: 24px;
     justify-content: center;
     align-items: center;
     border-radius: 6px;
