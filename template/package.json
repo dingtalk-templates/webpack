@@ -1,8 +1,8 @@
 {
-  "name": "weex-appcenter",
+  "name": "{{ name }}",
   "version": "1.0.0",
-  "description": "A Weex and Vue.js project",
-  "author": "icepy",
+  "description": "{{ description }}",
+  "author": "{{ author }}",
   "private": true,
   "scripts": {
     "dev:web": "node build/dev-server.js",
@@ -19,6 +19,7 @@
     "lodash": "^4.17.4",
     "vue": "^2.1.10",
     "vue-router": "^2.5.3",
+    "vuex": "^2.3.1",
     "weex-dingtalk": "^0.1.4",
     "weex-dingtalk-journey": "^0.1.2",
     "weex-html5": "^0.4.1",

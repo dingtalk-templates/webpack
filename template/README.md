@@ -1,6 +1,8 @@
-> A Weex and Vue.js project，你可以参考它来完善你的Weex应用架构或者直接使用它。
+## {{ name }}
 
-# 项目介绍
+> {{ description }}
+
+## 项目介绍
 
 这个项目为钉钉开发者准备了从构建，调试，到打包一系列的流程以及编写weex应用的最佳实践，我们使用`Webpack`来打包源代码，`Babel`帮助我们处理ES6的转译。
 
@@ -10,7 +12,7 @@
 
 你可以在 [weex-generator-package](https://github.com/icepy/weex-generator-package) 访问并下载使用它。
 
-# 目录结构
+## 目录结构
 
 1. components 可以共享的组件放在这里
 2. container 如果你使用了vue-router，那么需要使用这里的共用容器
@@ -18,7 +20,7 @@
 4. pages 真正的页面放在这里
 5. platforms 平台相关的入口放在这里
 
-# Build Setup
+## Build Setup
 
 ```bash
 # install dependencies
@@ -43,7 +45,7 @@ npm run build:weex
 npm run build
 ```
 
-# Mock
+## Mock
 
 本项目用koa写了一个简单的mock server，它非常的灵活可复制，你可以找到 `mock` 目录，在`router.js`中书写你想要mock的数据，比如GET：
 
@@ -65,12 +67,12 @@ router.post('/weex/post', function *(next) {
 });
 ```
 
-### 构建脚本学习资源
+## 构建脚本学习资源
 
 * [babel](https://babeljs.io/)
 * [webpack](https://webpack.js.org/guides/)
 
-### 如何创建一个传统bundle.js式页面
+## 如何创建一个传统bundle.js式页面
 
 我们可以先看一个很传统的方式来创建一个新页面，一个页面就是一个`bundle.js`，你应该在`Webpack`配置中去处理这些`bundle.js`。
 
@@ -116,7 +118,7 @@ entry:{
 
 最后，在你的终端里输入 `npm run dev:weex`，感受一下吧。
 
-### 如何创建一个带vue-router的页面
+## 如何创建一个带vue-router的页面
 
 有时候类似一个UIViewController式的`bundle.js`并不是你想要的，很多事情不是很好处理，那么你可以选择vue-router来处理转场，为什么它可以运行weex环境帮你处理转场？因为vue-router本意上是可以运行在任意的JavaScript环境中，你可以设置mode为`abstract`，而且weex是需要上层框架的render来进行计算渲染Native页面的，这也意味着当我们的路由进行转换时，vue-router会去处理一个Vue Component，而这个Vue Component 正是你需要渲染的页面。
 
