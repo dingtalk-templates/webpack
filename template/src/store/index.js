@@ -12,6 +12,9 @@ export default function Store(Vue){
       mutations: {
         increment (state) {
           state.count++
+        },
+        balance (state) {
+          
         }
       }
     });
