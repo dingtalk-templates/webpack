@@ -20,8 +20,8 @@
     "vue": "^2.1.10",
     "vue-router": "^2.5.3",
     "vuex": "^2.3.1",
-    "dingtalk-javascript-sdk": "^0.1.5",
-    "dingtalk-javascript-utility": "^0.1.6",
+    "dingtalk-javascript-sdk": "^0.1.6",
+    "dingtalk-javascript-utility": "^0.2.0",
     "weex-html5": "^0.4.1",
     "weex-vue-render": "^0.11.50"
   },
