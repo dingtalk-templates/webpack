@@ -8,7 +8,7 @@
 </template>
 <script>
 
-  import dingtalk from 'weex-dingtalk';
+  import dingtalk from 'dingtalk-javascript-sdk';
 
   export default {
     name: 'home',
