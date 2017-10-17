@@ -17,13 +17,13 @@
   },
   "dependencies": {
     "lodash": "^4.17.4",
-    "vue": "^2.1.10",
+    "vue": "^2.4.2",
     "vue-router": "^2.5.3",
     "vuex": "^2.3.1",
     "dingtalk-javascript-sdk": "^0.2.0",
     "dingtalk-javascript-utility": "^0.2.5",
     "weex-html5": "^0.4.1",
-    "weex-vue-render": "^0.11.50"
+    "weex-vue-render": "^0.12.21"
   },
   "devDependencies": {
     "babel-core": "^6.22.1",
