@@ -47,6 +47,7 @@
     flex-direction: column;
     justify-content: center;
     width: 750px;
+    align-items: center;
   }
   .title {
     font-size: 60px;
